@@ -12,15 +12,20 @@ function Player (symbol) {
 }
 //Busines Logic for Board
 function Board () {
-  this.boxes = [ [0,0], [0,1], [0,2], [1,0], [1,1], [1,2], [2,0], [2,1], [2,2] ];
+  this.box = new Box();
 }
 
-// Board.prototype.createBoxes = function() {
-//   // for(var i = 0; i < 9; i ++){
-//   //
-//   // }
-//   // var boxes = { [0,0], [0,1], [0,2], [1,0], [1,1], [1,2], [2,0] [2,1], [2,2] };
-//   // this.boxes.push(boxes);
-// }
 //Business Logic for Box
+function Box () {
+  this.coordinate = [],
+  this.marked = false
+}
+
+Box.prototype.createCoordinate = function() {
+ for (var i = 0; i < 3; i++){
+   for(var j = 0; j < 3; j++){
+     this.coordinate.push([i, j]);
+   }
+ }
+}
 //User Interface Logic
